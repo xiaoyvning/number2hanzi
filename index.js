@@ -8,11 +8,11 @@ function num2hanzi(num) {
     const units = ['个', '万', '亿', '万亿', '兆'];
     const suffix = ['', '十', '百', '千'];
     let numString = num + '';
-    if (/^\d+$/.test(numString)) {
+    if (!(/^\d+$/.test(numString))) {
         throw new Error('Not a number');
     }
-    if (/^\d+$/.test(numString)) {
-        throw new Error('Not a number');
+    if (num.length > 20) {
+        throw new Error('Number is too large');
     }
     let digitList = numString.split('');
     digitList.reverse();
